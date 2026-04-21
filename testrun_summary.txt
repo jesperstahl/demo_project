@@ -1,0 +1,12 @@
+DBT TEST RUN SUMMARY
+====================
+
+Total tests: 16
+Passed: 15
+Failed: 1
+Warnings: 0
+Errors: 0
+
+FAILED TESTS
+------------
+- 5fb22c2710 | failures=1 | message=Got 1 result, configured to fail if != 0

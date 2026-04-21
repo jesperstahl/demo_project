@@ -1,0 +1,49 @@
+20:13:27  Running with dbt=1.11.3
+20:13:27  Registered adapter: postgres=1.10.0
+20:13:27  Found 9 models, 16 data tests, 1 snapshot, 466 macros
+20:13:27  
+20:13:27  Concurrency: 4 threads (target='dev')
+20:13:27  
+20:13:28  1 of 16 START test no_invalid_order_amounts_fact_orders_order_amount ........... [RUN]
+20:13:28  2 of 16 START test not_null_dim_customers_city ................................. [RUN]
+20:13:28  3 of 16 START test not_null_dim_customers_customer_id .......................... [RUN]
+20:13:28  4 of 16 START test not_null_dim_customers_dbt_scd_id ........................... [RUN]
+20:13:28  1 of 16 PASS no_invalid_order_amounts_fact_orders_order_amount ................. [PASS in 0.10s]
+20:13:28  5 of 16 START test not_null_dim_customers_updated_at ........................... [RUN]
+20:13:28  4 of 16 PASS not_null_dim_customers_dbt_scd_id ................................. [PASS in 0.09s]
+20:13:28  2 of 16 PASS not_null_dim_customers_city ....................................... [PASS in 0.11s]
+20:13:28  3 of 16 PASS not_null_dim_customers_customer_id ................................ [PASS in 0.11s]
+20:13:28  6 of 16 START test not_null_fact_orders_customer_id ............................ [RUN]
+20:13:28  7 of 16 START test not_null_fact_orders_order_amount ........................... [RUN]
+20:13:28  8 of 16 START test not_null_fact_orders_order_date ............................. [RUN]
+20:13:28  6 of 16 PASS not_null_fact_orders_customer_id .................................. [PASS in 0.07s]
+20:13:28  7 of 16 PASS not_null_fact_orders_order_amount ................................. [PASS in 0.07s]
+20:13:28  9 of 16 START test not_null_fact_orders_order_id ............................... [RUN]
+20:13:28  10 of 16 START test not_null_my_first_dbt_model_id ............................. [RUN]
+20:13:28  9 of 16 PASS not_null_fact_orders_order_id ..................................... [PASS in 0.06s]
+20:13:28  10 of 16 FAIL 1 not_null_my_first_dbt_model_id ................................. [FAIL 1 in 0.05s]
+20:13:28  11 of 16 START test not_null_my_second_dbt_model_id ............................ [RUN]
+20:13:28  12 of 16 START test relationships_fact_orders_customer_id__customer_id__ref_dim_customers_latest_  [RUN]
+20:13:28  5 of 16 PASS not_null_dim_customers_updated_at ................................. [PASS in 0.21s]
+20:13:28  8 of 16 PASS not_null_fact_orders_order_date ................................... [PASS in 0.19s]
+20:13:28  13 of 16 START test unique_dim_customers_dbt_scd_id ............................ [RUN]
+20:13:28  14 of 16 START test unique_fact_orders_order_id ................................ [RUN]
+20:13:28  11 of 16 PASS not_null_my_second_dbt_model_id .................................. [PASS in 0.12s]
+20:13:28  12 of 16 PASS relationships_fact_orders_customer_id__customer_id__ref_dim_customers_latest_  [PASS in 0.07s]
+20:13:28  15 of 16 START test unique_my_first_dbt_model_id ............................... [RUN]
+20:13:28  16 of 16 START test unique_my_second_dbt_model_id .............................. [RUN]
+20:13:28  14 of 16 PASS unique_fact_orders_order_id ...................................... [PASS in 0.07s]
+20:13:28  13 of 16 PASS unique_dim_customers_dbt_scd_id .................................. [PASS in 0.07s]
+20:13:28  15 of 16 PASS unique_my_first_dbt_model_id ..................................... [PASS in 0.06s]
+20:13:28  16 of 16 PASS unique_my_second_dbt_model_id .................................... [PASS in 0.06s]
+20:13:28  
+20:13:28  Finished running 16 data tests in 0 hours 0 minutes and 0.62 seconds (0.62s).
+20:13:28  
+20:13:28  Completed with 1 error, 0 partial successes, and 0 warnings:
+20:13:28  
+20:13:28  Failure in test not_null_my_first_dbt_model_id (models\example\schema.yml)
+20:13:28    Got 1 result, configured to fail if != 0
+20:13:28  
+20:13:28    compiled code at target\compiled\demo_project\models\example\schema.yml\not_null_my_first_dbt_model_id.sql
+20:13:28  
+20:13:28  Done. PASS=15 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=16
