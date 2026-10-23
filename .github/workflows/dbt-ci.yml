@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - feature/**
+  workflow_dispatch:
 
 jobs:
   dbt-build:
@@ -23,7 +24,6 @@ jobs:
           dbt --version
           dbt debug || true
           dbt build
-        working-directory: .
 
       - name: Upload dbt artifacts (logs + target)
         if: always()
