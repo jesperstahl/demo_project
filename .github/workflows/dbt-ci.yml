@@ -1,18 +1,35 @@
-python-version: '3.12'
+name: dbt CI
 
-- name: Install dbt (Postgres adapter)
-  run: |
-    dbt --version
-    dbt debug || true
-    dbt build
-  working-directory: .
+on:
+  push:
+    branches:
+      - main
+      - feature/**
 
-- name: Upload dbt artifacts (logs + target)
-  if: always()
-  uses: actions/upload-artifact@v4
-  with:
-    name: dbt-artifacts
-    path: |
-      logs
-      target
+jobs:
+  dbt-build:
+    runs-on: ubuntu-latest
 
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dbt (Postgres adapter)
+        run: |
+          pip install dbt-postgres
+          dbt --version
+          dbt debug || true
+          dbt build
+        working-directory: .
+
+      - name: Upload dbt artifacts (logs + target)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dbt-artifacts
+          path: |
+            logs
+            target
